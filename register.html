@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(images/house-img-1.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100hv;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        label{
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            color:brown;
+        }
+        input[type="text"],input[type="number"],input[type="password"]{
+            width: 100%;
+            height: 40px;
+            padding:10px ;
+            border:4px solid green ;
+            border-radius:10px ;
+            background-color: greenyellow;
+        }
+        input:focus{
+            background-color: aqua;
+        }
+        input[type="submit"]{
+            background-color:red ;
+            padding:10px ;
+            border:4px solid blue ;
+            border-radius: 10px;
+            height: 60px;
+            width: 460px;
+            color:white ;
+            font-size: 25px;
+            font-weight:bold ;
+        }
+        input[type="submit"]:hover{
+            background-color: gray;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function sub(){
+            var a = document.getElementById('uid').value;
+            var b = document.getElementById('uid').value;
+            var c = document.getElementById('uid').value;
+            var d = document.getElementById('uid').value;
+            if(a=="" || b=="" || c=="" || d=="" ){
+                alert("All fields are mandatory");
+                return false;
+
+            }
+            else if(b.len<10 || b.length>10){
+                alert("Mobile number Must be of 10 digits")
+                return false;
+
+            }
+            else if(isNaN(b)){
+                alert("Mobile number Must contain digits only")
+                return false;   
+            }
+            else if(c != d){
+                alert("Please enter the same password");
+                return false;
+                
+            }
+            else{
+                return true;
+                
+            }
+        }
+    </script>
+    <form onsubmit="return sub()" action="home.html" method="get">
+        <label for="uid">UserID:</label>
+        <input type="text" id="uid"><br>
+        <label for="mob">Mobile Number:</label>
+        <input type="number" id="moob"><br>
+        <label for="pass">password</label>
+        <input type="password" id="pass"> <br>
+        <label for="cnfm">confirm password:</label>
+        <input type="password" id="cnf"> <br><br>
+        <input type="Submit" value="submit form">
+    </form>
+</body>
+</html>
